@@ -4,7 +4,7 @@
 
 T = int(input()) #테스트케이스 개수
 for i in range(1,T+1):
-    a,b = map(int, input().split())
-    print(a+b)
+    a,b = map(int,input().split()) #입력을 받고
+    print(a+b) #출력을 한다
 
 
