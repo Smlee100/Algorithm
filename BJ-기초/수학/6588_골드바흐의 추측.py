@@ -1,4 +1,4 @@
-# 2021.08.10-알고리즘 이론 이해는 감 코드화하는거 다시보기(문제제출fail남)
+#TODO: 알고리즘 이론 이해는 감 코드화하는거 다시보기 (문제제출fail남)
 
 MAX = 1000000
 check = [True for i in range(MAX + 1)] #처음엔 모든 수가 소수(True)인 것으로 초기화
@@ -14,7 +14,7 @@ for i in range(2,MAX+1):
             check[i * j] = False
             j = j + 1
 
-# 다시!!!!
+#TODO
 while True:
     n = int(input())
     if n == 0:
