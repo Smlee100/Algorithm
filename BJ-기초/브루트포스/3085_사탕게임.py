@@ -12,26 +12,21 @@ def check(a, start_row, end_row, start_col, end_col):
     #행 순회하면서 연속되는 숫자 세기
     for i in range(start_row, end_row+1): #몇번행부터 몇번행까지 검사해라
         cnt = 1 #현재 연속을 모두 저장(이전 수가 다르면 1이므로 초기화 1로 함)
-        #i번 행에 대해서 검사
-        for j in range(1,n):
+        for j in range(1, n):
             if a[i][j] == a[i][j-1]: #이전 것과 같다면=연속 부분 찾는 것 TODO: 이전과 같은걸 찾을 때 왜 j-1?
                 cnt = cnt + 1 #cnt 증가
             else: #이전 것과 다르면
                 cnt = 1 #다시 1로 초기화
-
             if cnt > ans:
                 ans = cnt #ans 갱신하기(최대값을 찾는 것)
-
     #열 순회하면서 연속되는 숫자 세기
-    for i in range(start_col,end_col): #몇번열부터 몇번열까지 검사해라
+    for i in range(start_col, end_col+1): #몇번열부터 몇번열까지 검사해라
         cnt = 1
-        # i번 열에 대해서 검사
-        for j in range(1,n):
-            if a[i][j] == a[j-1][i]:
+        for j in range(1, n):
+            if a[j][i] == a[j-1][i]:
                 cnt = cnt + 1
             else:
                 cnt = 1
-
             if cnt > ans:
                 ans = cnt
     return ans
@@ -40,7 +35,6 @@ N = int(input())
 a = [list(input()) for _ in range(N)]
 ans = 0
 # 한칸[i,j]고르기 -> 오른쪽,아래만 검사하면 됨
-#TODO: 배열이니까 (N*N) 이중for문 돌리는거 맞나?
 for i in range(N):
     for j in range(N):
         if j+1 < N: #TODO: 이 조건이 뭔지 생각하기
